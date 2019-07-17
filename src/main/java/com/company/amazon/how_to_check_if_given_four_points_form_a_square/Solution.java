@@ -14,37 +14,33 @@ public class Solution {
         }
     }
 
-    private static Boolean isRightAngle(Point p1, Point p2) {
-        return false;
-    }
-
-    private static double pointDiff(Point p1, Point p2) {
+     private static double getLineLengh(Point p1, Point p2) {
         return Math.sqrt((p1.x - p2.x) * (p1.x - p2.x) + ((p1.y - p2.y) * (p1.y - p2.y)));
     }
 
-    public static boolean checkSquare(Point p1, Point p2, Point p3, Point p4) {
+    public static boolean isSquare(Point p1, Point p2, Point p3, Point p4) {
         if (p1 == null || p2 == null || p3 == null || p4 == null) {
             return false;
         }
-        double distSideOne = pointDiff(p1, p2);
-        double distSideTwo = pointDiff(p1, p3);
-        double distSideThree = pointDiff(p1, p4);
+        double distSideOne = getLineLengh(p1, p2);
+        double distSideTwo = getLineLengh(p1, p3);
+        double distSideThree = getLineLengh(p1, p4);
 
         if (distSideOne == distSideTwo) {
-            if (pointDiff(p2, p4) == pointDiff(p3, p4)) {
-                if (pointDiff(p1, p4) == pointDiff(p2, p3)) {
+            if (getLineLengh(p2, p4) == getLineLengh(p3, p4)) {
+                if (getLineLengh(p1, p4) == getLineLengh(p2, p3)) {
                     return true;
                 }
             }
         } else if (distSideOne == distSideThree) {
-            if (pointDiff(p2, p3) == pointDiff(p4, p3)) {
-                if (pointDiff(p1, p3) == pointDiff(p2, p4)) {
+            if (getLineLengh(p2, p3) == getLineLengh(p4, p3)) {
+                if (getLineLengh(p1, p3) == getLineLengh(p2, p4)) {
                     return true;
                 }
             }
         } else  if (distSideTwo == distSideThree) {
-            if (pointDiff(p3, p2) == pointDiff(p4, p2)) {
-                if (pointDiff(p1, p2) == pointDiff(p3, p4)) {
+            if (getLineLengh(p3, p2) == getLineLengh(p4, p2)) {
+                if (getLineLengh(p1, p2) == getLineLengh(p3, p4)) {
                     return true;
                 }
             }
