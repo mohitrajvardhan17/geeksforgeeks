@@ -1,7 +1,7 @@
 package com.company.amazon;
 
 /*
-c
+Problem Statement:
 Given a string you need to print all possible strings that can be made by placing spaces (zero or one) in between them.
 Input:  str[] = "ABC"
 Output: ABC
